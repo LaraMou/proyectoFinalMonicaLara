@@ -1,0 +1,62 @@
+<div class="card bg-dark text-white" >
+  <div class="card-header">{{titulo}}</div>
+  <div class="card-body">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-12">
+            <h1>Nuevo Etiqueta</h1>
+          </div>
+        </div>
+
+    <div class="row">
+      <div class="col-12">
+
+            <!-- Formulario, al pulsar en el submit, llama a la funcion addContact -->
+            <!-- Cada control almacena una propiedad de un atributo con ngModel -->
+            <form #form="ngForm" (ngSubmit)="create()">
+
+              <div class="row form-group">
+                <div class="col-md-6 col-12 form-group">
+
+
+                  <label for="name">Nombre (*)</label>
+                  <input type="text"
+                    class="form-control"
+                    name="name"
+                    id="name"
+                    placeholder="Escribe un nombre..."
+                    minlength="3"
+                    required
+                    #name="ngModel"
+                    [(ngModel)]="etiqueta.nombre"
+                    [ngClass]="{
+                      'is-valid': name.dirty && !name.errors,
+                      'is-invalid': name.dirty && name.errors
+                    }">
+
+                    <!-- Muestra si es correcto o no (bootstrap) -->
+                    <div class="valid-feedback">
+                      <span>¡Correcto!</span>
+                    </div>
+                    <div class="invalid-feedback">
+                      <span *ngIf="name.errors?.required">Valor requerido</span>
+                      
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <!-- boton submit -->
+                    <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-block">Añadir Etiqueta</button>
+                  </div>
+                </div>
+          </form>
+
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>

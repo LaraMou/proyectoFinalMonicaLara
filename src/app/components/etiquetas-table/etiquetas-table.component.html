@@ -1,0 +1,78 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">Etiquetas</div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de etiquetas</h5>
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes/form']">
+        Crear Etiqueta
+      </button>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>nombre</th>
+          <th>Creado por</th>
+          <th>fecha</th>
+          <th>
+            editar
+          </th>
+          <th>eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let etiqueta of etiquetaList">
+          <td>{{ etiqueta.nombre }}</td>
+          <td>{{ etiqueta.lastModifiedBy }}</td>
+          <td>{{ cliente.createAt }}</td>
+          <td>
+            <button type="button" name="editar" [routerLink]="['/etiqueta/form', cliente.id]" class="btn btn-primary btn-sm">editar</button>
+          </td>
+          <td>
+            <button type="button" name="eliminar" (click)='delete(etiqueta)' class="btn btn-danger btn-sm">eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!--si no volvemos al asunto-->
+<!-- <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> etiquetas </th>
+            <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastModifiedBy">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> creador </th>
+            <td mat-cell *matCellDef="let row"> {{row.lastModifiedBy}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha Creacion </th>
+            <td mat-cell *matCellDef="let row"> {{row.createdDate |date}} </td>
+        </ng-container>
+        <ng-container matColumnDef="borrar">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Borrar</th>
+            <td mat-cell *matCellDef="let row"> <button (click)="deleteTag(row)">Borrar</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div> -->
