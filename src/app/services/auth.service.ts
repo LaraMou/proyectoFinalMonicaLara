@@ -47,7 +47,17 @@ export class AuthService {
       email: user.email,
       password: user.password,
     };
-    return this.http.post('http://localhost:8080/api/auth/login', body)
+    // return this.http.post('http://localhost:8080/api/auth/login', body)
+    return this.http.post('https://app-expertos.herokuapp.com/api/login', body)
+  }
+
+  register(user: User): Observable<any> {
+    let body = {
+
+      email: user.email,
+      password: user.password,
+    };
+    return this.http.post('http://localhost:8080/api/auth/signup', body)
   }
 
   // Setter and Getter of LoggedIn

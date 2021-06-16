@@ -39,13 +39,14 @@ export class CrearExpertoComponent implements OnInit {
   ngOnInit() { }
 
   add(event: MatChipInputEvent): void {
+
     const input = event.input;
     const value = event.value;
     let etiqueta = new Etiqueta(value,new Date());
 
     // Add our etiqueta
     if ((value || '').trim()) {
-
+      
       this.etiquetas.push(etiqueta);
     }
 

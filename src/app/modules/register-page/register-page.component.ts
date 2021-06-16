@@ -17,11 +17,8 @@ export class RegisterPageComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      password: ['', Validators.compose([Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$')])],
-      phones: this.formBuilder.array([]), // Array of phones: [ {prefix:..., number: ...}, {prefix: ..., number: ...}]
-      first_name: ['', Validators.required],
-      last_name: ['', Validators.required],
-      age: [18, Validators.compose([Validators.required, Validators.min(18), Validators.max(99)])]
+      password: ['', Validators.compose([Validators.required])],
+
     });
   }
 

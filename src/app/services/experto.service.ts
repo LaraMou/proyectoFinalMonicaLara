@@ -10,8 +10,8 @@ import {map, catchError} from 'rxjs/operators'
 })
 export class ExpertoService {
 //endpoint atributos
-  private urlEndpoint: string = 'http://localhost:8080/api/expertos';
-  // private urlEndpoint: string = 'https://app-expertos.herokuapp.com/api/expertos';
+  // private urlEndpoint: string = 'http://localhost:8080/api/expertos';
+  private urlEndpoint: string = 'https://app-expertos.herokuapp.com/api/expertos';
   constructor(private http:HttpClient) { }
 
   getExpertos(): Observable<Expertos[]> {
