@@ -16,7 +16,10 @@ export class LoginFormComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({});
   // AuthSubscription
   authSubscription: Subscription = new Subscription();
-  constructor(private router: Router, private authService: AuthService, private formBuilder: FormBuilder) { }
+ hide:boolean = false;
+  constructor(private router: Router, private authService: AuthService, private formBuilder: FormBuilder) {
+
+   }
   ngOnInit(): void {
        // Before the Login Component Renders, we create our LoginForm
     // with the Form Builder
@@ -25,9 +28,9 @@ export class LoginFormComponent implements OnInit {
       email: new FormControl('',[
         Validators.required,
         Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      password: ''
-    });
-  }
+        password: new FormControl('', [Validators.required, Validators.min(3) ])
+      }); }
+
   login() {
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe((response) => {

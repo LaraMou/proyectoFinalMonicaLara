@@ -19,7 +19,10 @@
   <div class="row form-group">
     <div class="col-sm-6">
       <mat-form-field>
-        <input matInput type="password" formControlName="password" placeholder="Password"/>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        
+
       </mat-form-field>
     </div>
   </div>
