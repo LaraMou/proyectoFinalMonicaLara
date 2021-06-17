@@ -12,10 +12,10 @@ import { User } from '../models/user';
 })
 export class AuthService {
 
-  // Boolean Variable to tell the AuthGuard that the user is Logged In
+
   private isLoggedIn: boolean = false
 
-  // We inject Http Client to the constructor of the service
+
   constructor(private http: HttpClient) { }
 
   /**
@@ -42,12 +42,12 @@ export class AuthService {
    * @param user User
    * @reurn Observable<any>
    */
-  login(user: User): Observable<any> {
+   login(email:string, password:string): Observable<any> {
     let body = {
-      email: user.email,
-      password: user.password,
-    };
-    return this.http.post('http://localhost:8080/api/auth/login', body)
+      email: email,
+     password: password
+    }
+    return this.http.post('https://app-expertos.herokuapp.com/api/auth/login', body)
   }
 
   // Setter and Getter of LoggedIn
@@ -58,8 +58,13 @@ export class AuthService {
   setLoggedIn(value: boolean) {
     this.isLoggedIn = value;
   }
-  isAuthenticated() {
-    console.log("estoy aqui")
-    return localStorage.getItem("logged");
+  register(userName:string, email:string,password:string): Observable<any>{
+    let body = {
+      username: userName,
+      email: email,
+     password: password
+    }
+
+    return this.http.post('https://app-expertos.herokuapp.com/signup', body)
   }
 }
