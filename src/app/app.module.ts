@@ -31,6 +31,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EtiquetasTableComponent } from './components/etiquetas-table/etiquetas-table.component';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { EtiquetasPageComponent } from './modules/etiquetas/etiquetas-page/etiquetas-page.component';
 import { EliminarEtiquetaComponent } from './components/eliminar-etiqueta/eliminar-etiqueta.component';
 import { CrearEtiquetaComponent } from './components/crear-etiqueta/crear-etiqueta.component';
@@ -93,6 +94,7 @@ import { RegisterPageComponent } from './modules/register-page/register-page.com
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     MatTabsModule,
     MatInputModule,
     MatSelectModule,
