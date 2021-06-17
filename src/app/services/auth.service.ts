@@ -60,7 +60,6 @@ export class AuthService {
   }
   register(userName:string, email:string,password:string): Observable<any>{
     let body = {
-      console.log("hola");
       username: userName,
       email: email,
      password: password
