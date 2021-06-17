@@ -47,7 +47,7 @@ export class AuthService {
       email: email,
      password: password
     }
-    return this.http.post('http://localhost:8080/api/auth/login', body)
+    return this.http.post('https://app-expertos.herokuapp.com/api/auth/login', body)
   }
 
   // Setter and Getter of LoggedIn
@@ -65,6 +65,6 @@ export class AuthService {
      password: password
     }
 
-    return this.http.post('http://localhost:8080/api/auth/signup', body)
+    return this.http.post('https://app-expertos.herokuapp.com/signup', body)
   }
 }
