@@ -10,9 +10,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class RegisterPageComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({})
-  snackbarService: any;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService,private router: Router) { }
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService,private router: Router, private snackbarService: SnackbarService) { }
 
   ngOnInit(): void {
 
@@ -20,11 +20,11 @@ export class RegisterPageComponent implements OnInit {
       username: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(10)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.compose([Validators.required])]
-  
+
     });
   }
 
-  
+
   // Submit
   submitRegisterForm() {
 
@@ -40,6 +40,6 @@ export class RegisterPageComponent implements OnInit {
     } else{
       this.snackbarService.openSnackBar("Los datos son incorrectos");
      }
-  
+
   }
 }
