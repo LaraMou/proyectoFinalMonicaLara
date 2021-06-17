@@ -65,6 +65,6 @@ export class AuthService {
      password: password
     }
 
-    return this.http.post('https://app-expertos.herokuapp.com/signup', body)
+    return this.http.post('https://app-expertos.herokuapp.com/api/auth/signup', body)
   }
 }
