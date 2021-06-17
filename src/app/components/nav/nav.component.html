@@ -10,9 +10,11 @@
       src="assets/img/logo.png"/>Menu</mat-toolbar>
     <mat-nav-list>
       <!-- <a mat-list-item href="/login" >login</a> -->
-      <a mat-list-item href="/expertos" >Expertos</a>
-      <a mat-list-item href="/etiquetas">Etiquetas</a>
-
+      <!-- <a mat-list-item href="/expertos" >Expertos</a>
+      <a mat-list-item href="/etiquetas">Etiquetas</a> -->
+      <a class="color" mat-list-item routerLink='/expertos' (click)="changeTitle('experts')"><mat-icon>people_alt</mat-icon>  Expertos  </a>
+      <a class="color" mat-list-item routerLink='/etiquetas' (click)="changeTitle('tags')"><mat-icon>local_offer</mat-icon>   Etiquetas</a>
+      <button mat-raised-button *ngIf="isLogged" (click)='logout()'>Cerrar sesión </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
