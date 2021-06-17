@@ -29,6 +29,7 @@ export class RegisterPageComponent implements OnInit {
   submitRegisterForm() {
 
     console.table(this.registerForm.value);
+    console.log("hola");
     if(this.registerForm.valid){
       this.authService.register(this.registerForm.value.username,this.registerForm.value.email, this.registerForm.value.password)
       .subscribe((response)=>{
